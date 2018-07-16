@@ -25,7 +25,7 @@ public class AndroidTest {
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.eribank/com.experitest.ExperiBank.LoginActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.eribank");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.experitest.ExperiBank.LoginActivity");
-        if(System.getenv("Cloud").equals("Sales"))
+        if(System.getenv("cloud").equals("Sales"))
         	driver = new AndroidDriver<>(new URL("https://sales.experitest.com:443/wd/hub"), dc);
         else
         	driver = new AndroidDriver<>(new URL("https://uscloud.experitest.com:443/wd/hub"), dc);
