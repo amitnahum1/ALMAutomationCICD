@@ -24,7 +24,6 @@ public class IOSTest {
         dc.setCapability("deviceQuery", "@os='ios' and @category='PHONE'");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
         dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBank");
-        System.out.println("***" + System.getenv("cloud"));
         if(System.getenv("cloud").equals("Sales"))
         	driver = new IOSDriver<>(new URL("https://sales.experitest.com:443/wd/hub"), dc);
         else
