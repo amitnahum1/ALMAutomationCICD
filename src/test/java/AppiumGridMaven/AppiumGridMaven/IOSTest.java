@@ -10,6 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.logging.Level;
 
 public class IOSTest {
 
@@ -28,6 +29,7 @@ public class IOSTest {
         	driver = new IOSDriver<>(new URL("https://sales.experitest.com:443/wd/hub"), dc);
         else
         	driver = new IOSDriver<>(new URL("https://uscloud.experitest.com:443/wd/hub"), dc);
+        driver.setLogLevel(Level.INFO);
     }
 
     @Test
