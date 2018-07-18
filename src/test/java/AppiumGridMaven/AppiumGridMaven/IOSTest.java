@@ -22,8 +22,8 @@ public class IOSTest {
         dc.setCapability("testName", "Grid Demo - iOS");
         dc.setCapability("accessKey", accessKey);
         dc.setCapability("deviceQuery", "@os='ios' and @category='PHONE'");
-        dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
-        dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBank");
+        dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBankO");
+        dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBankO");
         if(System.getenv("cloud").equals("Sales"))
         	driver = new IOSDriver<>(new URL("https://sales.experitest.com:443/wd/hub"), dc);
         else
