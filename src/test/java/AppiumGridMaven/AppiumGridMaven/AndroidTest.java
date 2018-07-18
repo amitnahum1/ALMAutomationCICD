@@ -10,6 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.logging.Level;
 
 public class AndroidTest {
 
@@ -19,12 +20,14 @@ public class AndroidTest {
 
     @BeforeTest
     public void setUp() throws MalformedURLException {
-        dc.setCapability("testName", "Grid Demo - Android");
-        dc.setCapability("accessKey", accessKey);
-        dc.setCapability("deviceQuery", "@os='android' and @category='PHONE'");
+    	
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.eribank/com.experitest.ExperiBank.LoginActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.eribank");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.experitest.ExperiBank.LoginActivity");
+        driver.setLogLevel(Level.INFO);
+        dc.setCapability("testName", "Grid Demo - Android");
+        dc.setCapability("accessKey", accessKey);
+        dc.setCapability("deviceQuery", "@os='android' and @category='PHONE'");
         if(System.getenv("cloud").equals("Sales"))
         	driver = new AndroidDriver<>(new URL("https://sales.experitest.com:443/wd/hub"), dc);
         else
