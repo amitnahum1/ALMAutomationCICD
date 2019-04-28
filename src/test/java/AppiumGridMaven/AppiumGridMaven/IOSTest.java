@@ -14,7 +14,7 @@ import java.util.logging.Level;
 
 public class IOSTest {
 
-	private String accessKey = System.getenv("access_key");
+	private String accessKey = eyJ4cC51IjoxNjQ2OTEsInhwLnAiOjIsInhwLm0iOiJNVFV6TVRreE56TXlORE13TUEiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE4NDcyNzczMjQsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.keW_WyKI89mMrfD8nkhn5Hv8zmi3Z0zRKeIHxMwSL9o;
     protected IOSDriver<IOSElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
 
@@ -25,11 +25,8 @@ public class IOSTest {
         dc.setCapability("deviceQuery", "@os='ios' and @category='PHONE'");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
         dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBank");
-        if(System.getenv("cloud").equals("Sales"))
-        	driver = new IOSDriver<>(new URL("https://sales.experitest.com:443/wd/hub"), dc);
-        else
-        	driver = new IOSDriver<>(new URL("https://uscloud.experitest.com:443/wd/hub"), dc);
-        driver.setLogLevel(Level.INFO);
+        driver = new IOSDriver<>(new URL("https://sales.experitest.com:443/wd/hub"), dc);
+
     }
 
     @Test
