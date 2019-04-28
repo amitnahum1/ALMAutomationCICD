@@ -14,7 +14,7 @@ import java.util.logging.Level;
 
 public class AndroidTest {
 
-    private String accessKey = System.getenv("access_key");
+    private String accessKey = eyJ4cC51IjoxNjQ2OTEsInhwLnAiOjIsInhwLm0iOiJNVFV6TVRreE56TXlORE13TUEiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE4NDcyNzczMjQsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.keW_WyKI89mMrfD8nkhn5Hv8zmi3Z0zRKeIHxMwSL9o;
 	protected AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
 
@@ -27,10 +27,7 @@ public class AndroidTest {
         dc.setCapability("testName", "Grid Demo - Android");
         dc.setCapability("accessKey", accessKey);
         dc.setCapability("deviceQuery", "@os='android' and @category='PHONE'");
-        if(System.getenv("cloud").equals("Sales"))
-        	driver = new AndroidDriver<>(new URL("https://sales.experitest.com:443/wd/hub"), dc);
-        else
-        	driver = new AndroidDriver<>(new URL("https://uscloud.experitest.com:443/wd/hub"), dc);
+        driver = new AndroidDriver<>(new URL("https://sales.experitest.com:443/wd/hub"), dc);
         driver.setLogLevel(Level.INFO);
     }
 
